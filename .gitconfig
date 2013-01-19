@@ -40,7 +40,7 @@
 [mergetool]
 	keepBackup = true
 [core]
-	excludesfile = /Users/msim/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vi
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
