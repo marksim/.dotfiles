@@ -1,0 +1,4 @@
+export POW_RVM_PATH=~/.rvm/scripts/rvm
+export POW_TIMEOUT=30000
+export POW_WORKERS=3
+export POW_DST_PORT=88

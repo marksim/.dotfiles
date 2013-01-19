@@ -1,0 +1,52 @@
+[user]
+	name = Mark Sim
+	email = marksim@gmail.com
+
+[alias]
+    st = status -sb
+    stat = status -sb
+    ci = commit
+    br = branch
+    co = checkout
+    br = branch
+    undo = reset --soft HEAD^
+    recent = log --pretty=format:'%Cred%h %Creset- %Cgreen%an (%ad)%Creset: %s' --since='5 days ago' --date=short
+    new-remote-branch = !sh -c 'git co -b $1 && git push origin $1 && git branch --set-upstream $1 origin/$1' -
+    remote-branch = !sh -c 'git checkout --track -b $1 origin/$1' -
+    remove-remote-branch = !sh -c 'git push origin :$1' -
+    switch = !sh -c '~/bin/switch $1' - 
+
+    # Divergence (commits we added and commits remote added)
+    div = divergence
+
+    # Goodness (summary of diff lines added/removed/total)
+    gn = goodness
+    gnc = goodness --cached
+
+    # Fancy logging.
+    #   h = head
+    #   hp = head with patch
+    #   r = recent commits, only current branch
+    #   ra = recent commits, all reachable refs
+    #   l = all commits, only current branch
+    #   la = all commits, all reachable refs
+    head = !git l -1
+    h = !git head
+    hp = "!. ~/.githelpers && show_git_head"
+    r = !git l -30
+    ra = !git r --all
+    l = "!. ~/.githelpers && pretty_git_log"
+    la = !git l --all
+[mergetool]
+	keepBackup = true
+[core]
+	excludesfile = /Users/msim/.gitignore_global
+	editor = vi
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = 1
