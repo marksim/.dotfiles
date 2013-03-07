@@ -1,0 +1,27 @@
+[submodule "QuickBuf"]
+  path = .vim/bundle/QuickBuf
+  url = git://github.com/vim-scripts/QuickBuf.git
+[submodule "ack.vim"]
+  path = .vim/bundle/ack.vim
+  url = git://github.com/mileszs/ack.vim.git
+[submodule "command-t"]
+  path = .vim/bundle/command-t
+  url = git://git.wincent.com/command-t.git
+[submodule "nerdtree"]
+  path = .vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
+[submodule "supertab"]
+  path = .vim/bundle/supertab
+  url = git://github.com/ervandew/supertab.git
+[submodule "vim-coffee-script"]
+  path = .vim/bundle/vim-coffee-script
+  url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim-colors-solarized"]
+  path = .vim/bundle/vim-colors-solarized
+  url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim-fugitive"]
+  path = .vim/bundle/vim-fugitive
+  url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim-rails"]
+  path = .vim/bundle/vim-rails
+  url = git://github.com/tpope/vim-rails.git
