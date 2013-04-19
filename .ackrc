@@ -1,5 +1,5 @@
 --type-set=haml=.haml
---type-set=sass=.sass
+--type-set=sass=.sass,.scss
 --type-set=coffee=.coffee
 --ignore-dir=log
 --ignore-dir=coverage
