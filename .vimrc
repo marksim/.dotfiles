@@ -2,6 +2,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set ruler
+set number
 set colorcolumn=80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
