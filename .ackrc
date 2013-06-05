@@ -1,6 +1,7 @@
 --type-set=haml=.haml
 --type-set=sass=.sass,.scss
 --type-set=coffee=.coffee
+--type-set=markdown=.markdown,.md
 --ignore-dir=log
 --ignore-dir=coverage
 --ignore-dir=tmp
