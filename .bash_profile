@@ -1,6 +1,7 @@
 source ~/.bash/aliases
 source ~/.bash/colors
 source ~/.bash/completions
+source ~/.bash/functions
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -17,6 +18,8 @@ export PATH="~/bin:/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export DISPLAY=0:0
 
 export CDPATH=".:~:~/dev/reqhub:~/dev::~/Library:"
+
+export EDITOR=vi
 
 export PS1="$BLUE\$(date '+%Y-%m-%d %H:%M') $GREEN\w$YELLOW\$(git branch 2>/dev/null|cut -f2 -d\* -s) $GREEN\$ $WHITE"
 
