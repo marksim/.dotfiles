@@ -50,3 +50,5 @@
 	trustExitCode = true
 [color]
 	ui = 1
+[github]
+	user = marksim

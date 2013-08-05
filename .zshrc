@@ -7,6 +7,13 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="geoffgarside"
 
+EDITOR="vi"
+
+export TWITTER_CONSUMER_TOKEN='5Wzi6oKZAZzCd86NPVwUdg'
+export TWITTER_CONSUMER_SECRET='6fveZcV1DW7RdwjsUHdy47YfI84mLOjSjVKKLDlGbw'
+export TWITTER_OAUTH_TOKEN='7559632-igqhT2Peym0FKfleS60H9lBpP7QaUnL9SMH3mR4q0s'
+export TWITTER_OAUTH_SECRET='xIOW8I0XAOZldzfYgiABk0k6Q2qlH40x0xOVjd5flc'
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -40,7 +47,7 @@ ZSH_THEME="geoffgarside"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git codedir rake dotfiles)
+plugins=(git codedir rake dotfiles deploy)
 
 source $ZSH/oh-my-zsh.sh
 
