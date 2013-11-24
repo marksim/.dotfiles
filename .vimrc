@@ -24,6 +24,7 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+set clipboard=unnamed
 
 set ttimeoutlen=50
 
@@ -31,6 +32,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
 
 let mapleader=","
 imap <C-l> <space>=><space>
@@ -46,7 +48,7 @@ function! RunTestFile(...)
     endif
 
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\|_test.exs\|_test.spec.js\)$') != -1
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\|_test.exs\|_test.spec.js\|_test.py\)$') != -1
     if in_test_file
         call SetTestFile()
     elseif !exists("t:grb_test_file")
@@ -85,6 +87,7 @@ function! RunTests(filename)
 endfunction
 
 autocmd BufWritePost *.exs :call RunTestFile()
+autocmd BufWritePost *.py :call RunTestFile()
 autocmd BufWritePost *.rb :call RunTestFile()
 autocmd BufWritePost *.js :call RunTestFile()
 
@@ -94,6 +97,7 @@ autocmd BufWritePost *.js :call RunTestFile()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F5> :CommandTFlush<CR>
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
+nmap <silent> <Leader>r :NERDTreeFind<CR>
 let g:qb_hotkey = "<F6>"
 
 
@@ -180,4 +184,19 @@ let g:RspecSplitHorizontal=0
 " only works on OSX with Marked.app installed
 imap <Leader>m <ESC>:!open -a Marked.app "%"<CR><CR>
 nmap <Leader>m :!open -a Marked.app "%"<CR><CR>
+
+" CTags
+map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+""""
+" 
+"""'
+fun! ResizeWindowIfTooSmall()
+  if winwidth('%') < 80
+    :vertical resize 80
+  end
+endfun
+
+autocmd! BufEnter * call ResizeWindowIfTooSmall()
+
 
