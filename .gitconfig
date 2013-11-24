@@ -41,7 +41,7 @@
 	keepBackup = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vi
+	editor = /usr/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -52,3 +52,7 @@
 	ui = 1
 [github]
 	user = marksim
+[push]
+	default = current
+[rerere]
+	enabled = 1
