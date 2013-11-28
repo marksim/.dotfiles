@@ -3,40 +3,43 @@
 	email = marksim@gmail.com
 
 [alias]
-    st = status -sb
-    stat = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    br = branch
-    undo = reset --soft HEAD^
-    recent = log --pretty=format:'%Cred%h %Creset- %Cgreen%an (%ad)%Creset: %s' --since='5 days ago' --date=short
-    new-remote-branch = !sh -c 'git co -b $1 && git push origin $1 && git branch --set-upstream $1 origin/$1' -
-    remote-branch = !sh -c 'git checkout --track -b $1 origin/$1' -
-    remove-remote-branch = !sh -c 'git push origin :$1' -
-    switch = !sh -c '~/bin/switch $1' - 
+  st = status -sb
+  stat = status -sb
+  ci = commit
+  br = branch
+  co = checkout
+  br = branch
+  undo = reset --soft HEAD^
+  recent = log --pretty=format:'%Cred%h %Creset- %Cgreen%an (%ad)%Creset: %s' --since='5 days ago' --date=short
+  remote-branch = !sh -c 'git checkout --track -b $1 origin/$1' -
+  remove-remote-branch = !sh -c 'git push origin :$1' -
 
-    # Divergence (commits we added and commits remote added)
-    div = divergence
+  # Upworthy feature-branch workflow
+  feature-branch = !sh -c 'git co master && git pull --rebase && git co -b $1' -
+  feature-merge = !sh -c 'BRANCH=$(git rev-parse --abbrev-ref HEAD); git co staging && git pull --rebase && git merge $BRANCH' -
+  deploy = !sh -c 'git checkout $1 && git pull --rebase && git push origin && git push $1 $1:master' -
 
-    # Goodness (summary of diff lines added/removed/total)
-    gn = goodness
-    gnc = goodness --cached
+  # Divergence (commits we added and commits remote added)
+  div = divergence
 
-    # Fancy logging.
-    #   h = head
-    #   hp = head with patch
-    #   r = recent commits, only current branch
-    #   ra = recent commits, all reachable refs
-    #   l = all commits, only current branch
-    #   la = all commits, all reachable refs
-    head = !git l -1
-    h = !git head
-    hp = "!. ~/.githelpers && show_git_head"
-    r = !git l -30
-    ra = !git r --all
-    l = "!. ~/.githelpers && pretty_git_log"
-    la = !git l --all
+  # Goodness (summary of diff lines added/removed/total)
+  gn = goodness
+  gnc = goodness --cached
+
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git l -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
 [mergetool]
 	keepBackup = true
 [core]
