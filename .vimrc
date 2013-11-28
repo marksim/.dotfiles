@@ -193,6 +193,7 @@ map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 """'
 fun! ResizeWindowIfTooSmall()
   if winwidth('%') < 80
+    wincmd =
     :vertical resize 80
   end
 endfun

@@ -9,10 +9,7 @@ ZSH_THEME="geoffgarside"
 
 EDITOR="vi"
 
-export TWITTER_CONSUMER_TOKEN='5Wzi6oKZAZzCd86NPVwUdg'
-export TWITTER_CONSUMER_SECRET='6fveZcV1DW7RdwjsUHdy47YfI84mLOjSjVKKLDlGbw'
-export TWITTER_OAUTH_TOKEN='7559632-igqhT2Peym0FKfleS60H9lBpP7QaUnL9SMH3mR4q0s'
-export TWITTER_OAUTH_SECRET='xIOW8I0XAOZldzfYgiABk0k6Q2qlH40x0xOVjd5flc'
+source $HOME/.sensitive
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,7 +31,7 @@ export TWITTER_OAUTH_SECRET='xIOW8I0XAOZldzfYgiABk0k6Q2qlH40x0xOVjd5flc'
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
