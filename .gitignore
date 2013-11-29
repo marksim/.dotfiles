@@ -4,5 +4,6 @@
 .powrc
 tmux.sh
 tags
+.env
 
 /.DS_Store

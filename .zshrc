@@ -9,7 +9,8 @@ ZSH_THEME="geoffgarside"
 
 EDITOR="vi"
 
-source $HOME/.sensitive
+touch $HOME/.env
+export $(cat $HOME/.env| grep -ve "^#")
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
