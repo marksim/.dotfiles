@@ -16,7 +16,7 @@
 
   # Upworthy feature-branch workflow
   feature-branch = !sh -c 'git co master && git pull --rebase && git co -b $1' -
-  feature-merge = !sh -c 'BRANCH=$(git rev-parse --abbrev-ref HEAD); git co staging && git pull --rebase && git merge $BRANCH' -
+  feature-merge = !sh -c 'BRANCH=$(git rev-parse --abbrev-ref HEAD) && git co staging && git pull --rebase && git merge $BRANCH' -
   deploy = !sh -c 'git checkout $1 && git pull --rebase && git push origin && git push $1 $1:master' -
 
   # Divergence (commits we added and commits remote added)
@@ -41,7 +41,7 @@
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
 [mergetool]
-	keepBackup = true
+	keepBackup = false
 [core]
 	excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
