@@ -7,6 +7,7 @@ set colorcolumn=80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+set noswapfile
 syntax enable
 set background=dark
 let g:solarized_termcolors = 256
@@ -86,10 +87,13 @@ function! RunTests(filename)
     end
 endfunction
 
-autocmd BufWritePost *.exs :call RunTestFile()
-autocmd BufWritePost *.py :call RunTestFile()
-autocmd BufWritePost *.rb :call RunTestFile()
-autocmd BufWritePost *.js :call RunTestFile()
+"autocmd BufWritePost *.exs :call RunTestFile()
+"autocmd BufWritePost *.py :call RunTestFile()
+"autocmd BufWritePost *.rb :call RunTestFile()
+"autocmd BufWritePost *.js :call RunTestFile()
+
+nnoremap <leader>T :call RunNearestTest()<cr>
+nnoremap <leader>a :call RunTests('')<cr>
 
  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,12 +196,12 @@ map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " 
 """'
 fun! ResizeWindowIfTooSmall()
-  if winwidth('%') < 80
+  if winwidth('%') < 80 
     wincmd =
     :vertical resize 80
   end
 endfun
 
 autocmd! BufEnter * call ResizeWindowIfTooSmall()
-
+autocmd! BufEnter NERD_Tree_1 :vertical resize 31
 
