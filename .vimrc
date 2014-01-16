@@ -1,5 +1,32 @@
-call pathogen#infect()
-call pathogen#helptags()
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here
+Bundle 'vim-scripts/QuickBuf'
+Bundle 'mileszs/ack.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tangledhelix/vim-octopress'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-bundler'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'tpope/vim-fugitive'
+Bundle 'sleistner/vim-jshint'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'mattn/webapi-vim'
+Bundle 'kien/ctrlp.vim'
 
 set ruler
 set number
@@ -93,30 +120,29 @@ endfunction
 "autocmd BufWritePost *.js :call RunTestFile()
 
 nnoremap <leader>T :call RunNearestTest()<cr>
-nnoremap <leader>a :call RunTests('')<cr>
+nnoremap <leader>a :call RunTestFile()<cr>
 
  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T remaps 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <F5> :CommandTFlush<CR>
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 nmap <silent> <Leader>r :NERDTreeFind<CR>
 let g:qb_hotkey = "<F6>"
 
 
-if &term =~ "xterm" || &term =~ "screen"
-  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
-  let g:CommandTFlush         = ['<C-l>']
-endif
+"if &term =~ "xterm" || &term =~ "screen"
+  "let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  "let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  "let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+  "let g:CommandTFlush         = ['<C-l>']
+"endif
 
-augroup CommandTExtension
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
+"augroup CommandTExtension
+  "autocmd!
+  "autocmd FocusGained * CommandTFlush
+  "autocmd BufWritePost * CommandTFlush
+"augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " only open NERDTree on load if there are no arguments passed to vim 
@@ -178,6 +204,11 @@ filetype plugin indent on
 let g:octopress_rake_executable = "noglob rake" 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>g :Gstatus<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-rspec 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <Leader>R :RunSpec<cr>
@@ -191,6 +222,9 @@ nmap <Leader>m :!open -a Marked.app "%"<CR><CR>
 
 " CTags
 map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Search
+nmap \ :Ack 
 
 """"
 " 
