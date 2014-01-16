@@ -54,3 +54,5 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=~/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # export PATH=$PATH:/Users/marksim/.rvm/gems/ruby-1.9.3-p392/bin:/Users/marksim/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/marksim/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/marksim/.rvm/bin:~/bin:/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
