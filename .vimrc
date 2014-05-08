@@ -27,6 +27,8 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'mattn/webapi-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tyru/open-browser.vim'
+Bundle 'tyru/open-browser-github.vim'
 
 set ruler
 set number
@@ -119,7 +121,7 @@ endfunction
 "autocmd BufWritePost *.rb :call RunTestFile()
 "autocmd BufWritePost *.js :call RunTestFile()
 
-nnoremap <leader>T :call RunNearestTest()<cr>
+nnoremap <leader>t :call RunNearestTest()<cr>
 nnoremap <leader>a :call RunTestFile()<cr>
 
  
@@ -224,7 +226,7 @@ nmap <Leader>m :!open -a Marked.app "%"<CR><CR>
 map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Search
-nmap \ :Ack 
+nmap \ :Ack! 
 
 """"
 " 

@@ -44,7 +44,8 @@
 	keepBackup = false
 [core]
 	excludesfile = ~/.gitignore
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
+  pager = less -F -X
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
