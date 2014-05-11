@@ -45,14 +45,11 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git codedir rake dotfiles deploy)
+plugins=(autojump git codedir rake dotfiles deploy)
 
 source $ZSH/oh-my-zsh.sh
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # Customize to your needs...
 export PATH=~/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:$PATH
-# export PATH=$PATH:/Users/marksim/.rvm/gems/ruby-1.9.3-p392/bin:/Users/marksim/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/marksim/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/marksim/.rvm/bin:~/bin:/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
