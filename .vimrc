@@ -1,34 +1,36 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here
-Bundle 'vim-scripts/QuickBuf'
-Bundle 'mileszs/ack.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tangledhelix/vim-octopress'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sleistner/vim-jshint'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/webapi-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tyru/open-browser.vim'
-Bundle 'tyru/open-browser-github.vim'
+Plugin 'vim-scripts/QuickBuf'
+Plugin 'mileszs/ack.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tangledhelix/vim-octopress'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-bundler'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-fugitive'
+Plugin 'sleistner/vim-jshint'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/webapi-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'tyru/open-browser-github.vim'
+
+call vundle#end()
 
 set ruler
 set number
