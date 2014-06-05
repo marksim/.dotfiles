@@ -36,7 +36,6 @@ brew tap nviennot/tmate
 brew install tmux reattach-to-user-namespace tmate
  
 # various apps
-brew install ical-buddy
 brew cask install moom
 brew cask install one-password
 brew cask install google-chrome
@@ -56,5 +55,11 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 brew install redis
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+brew install memcached
+ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
 brew install imagemagick
 brew install pidof
+
+brew install python
+pip install gcalcli
