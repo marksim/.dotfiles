@@ -1,1 +1,2 @@
-eval "$(rbenv init - --no-rehash)"
+source ~/.zshrc
+
