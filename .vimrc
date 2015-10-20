@@ -134,7 +134,6 @@ nmap <silent> <Leader>n :NERDTreeToggle<CR>
 nmap <silent> <Leader>r :NERDTreeFind<CR>
 let g:qb_hotkey = "<F6>"
 
-
 "if &term =~ "xterm" || &term =~ "screen"
   "let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
   "let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
@@ -147,6 +146,9 @@ let g:qb_hotkey = "<F6>"
   "autocmd FocusGained * CommandTFlush
   "autocmd BufWritePost * CommandTFlush
 "augroup END
+"
+" Search
+nmap \ :Ack! 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " only open NERDTree on load if there are no arguments passed to vim 
@@ -227,8 +229,6 @@ nmap <Leader>m :!open -a Marked.app "%"<CR><CR>
 " CTags
 map <Leader><Tab> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Search
-nmap \ :Ack! 
 
 """"
 " 
