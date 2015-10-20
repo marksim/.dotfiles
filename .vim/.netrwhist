@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/marksim/.cap'
 let g:netrw_dirhist_2='/Users/marksim/.vim'
 let g:netrw_dirhist_3='/Users/marksim/dev/reqhub/reqhub'
 let g:netrw_dirhist_4='/Users/marksim/dev/temp'
+let g:netrw_dirhist_5='/Users/marksim/dev/upworthy/wick'
+let g:netrw_dirhist_6='/Users/marksim/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/high_voltage-1.2.4'
+let g:netrw_dirhist_7='/Users/marksim/dev/upworthy/www/apps/content/app/assets/javascripts'

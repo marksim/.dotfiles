@@ -22,13 +22,28 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-fugitive'
-Plugin 'sleistner/vim-jshint'
+Plugin 'Shutnik/jshint2.vim'
+" Plugin 'sleistner/vim-jshint'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/webapi-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'tyru/open-browser-github.vim'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle.git'
+Plugin 'zimbatm/direnv.vim'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'mattn/emmet-vim'
+Plugin 'Shougo/unite.vim'
+
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-sexp.git'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'kien/rainbow_parentheses.vim'
+
+Plugin 'freitass/todo.txt-vim'
+Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 
@@ -243,3 +258,30 @@ endfun
 autocmd! BufEnter * call ResizeWindowIfTooSmall()
 autocmd! BufEnter NERD_Tree_1 :vertical resize 31
 
+
+" Autoload rainbow parens for Clojure
+augroup rainbow_parentheses
+  autocmd Syntax clojure RainbowParenthesesActivate
+  autocmd Syntax clojure RainbowParenthesesLoadRound
+  autocmd Syntax clojure RainbowParenthesesLoadSquare
+  autocmd Syntax clojure RainbowParenthesesLoadBraces
+augroup END
+
+" Fix some clojure indentations
+" https://github.com/guns/vim-clojure-static
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fnk', '^dfnk']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+
+" Fugitive
+" use "U" to discard changes to a file / check it out from status
+au FileType gitcommit nmap <buffer> U :Git checkout -- <c-r><c-g><cr>
+
+" Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
+" JSHint2
+
+if filereadable('script/lint')
+  let jshint2_command = 'script/lint'
+endif
