@@ -19,6 +19,8 @@
   feature-merge = !sh -c 'BRANCH=$(git rev-parse --abbrev-ref HEAD) && git co staging && git pull --rebase && git merge $BRANCH' -
   deploy = !sh -c 'git checkout $1 && git pull --rebase && git push origin && git push $1 $1:master' -
 
+  cleanup = !sh -c 'git branch --merged | grep -v \"\\*\" | grep -v master | grep -v dev | xargs -n 1 git branch -d' - 
+
   # Divergence (commits we added and commits remote added)
   div = divergence
 
@@ -60,3 +62,5 @@
 	default = current
 [rerere]
 	enabled = 1
+[credential]
+	helper = osxkeychain
