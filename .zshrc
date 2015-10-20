@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="geoffgarside"
 
-EDITOR="vi"
+export EDITOR=vim
 
 touch $HOME/.env
 export $(cat $HOME/.env| grep -ve "^#")
@@ -15,6 +15,7 @@ export $(cat $HOME/.env| grep -ve "^#")
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rrestart="bundle; npm install; touch tmp/restart.txt && rm -rf tmp/cache"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -45,7 +46,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git codedir rake dotfiles deploy)
+plugins=(fasd git codedir rake dotfiles deploy)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,3 +55,5 @@ export PATH=~/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 eval "$(rbenv init - --no-rehash)"
+
+eval "$(direnv hook zsh)"
