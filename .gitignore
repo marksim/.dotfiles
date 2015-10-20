@@ -5,6 +5,7 @@
 tmux.sh
 tags
 .env
+.envrc
 /.vim/bundle/**
 ~/.vim/bundle/vundle
 /.DS_Store
