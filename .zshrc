@@ -16,6 +16,8 @@ export $(cat $HOME/.env| grep -ve "^#")
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vi="mvim -v"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
