@@ -47,12 +47,14 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git codedir rake dotfiles deploy)
+plugins=(autojump git gitfast git-extras rails rake rake-fast dotfiles bundler sudo vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=~/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+. `brew --prefix`/etc/profile.d/z.sh
 
 # export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 eval "$(rbenv init - --no-rehash)"
